@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+
+public class ManagingApp {
+	
+	ArrayList<Book> books = new ArrayList<Book>();
+	
+	public void add(String author, String name){
+		
+		Book b = new Book(author, name);		
+		books.add(b);
+		
+		System.out.println("book " + author + " " + name + " was added");
+	}
+	
+	public void add(String name){
+		
+		Book b = new Book(name);		
+		books.add(b);
+		
+		System.out.println("book " + "Unknown " + name + " was added");
+	}
+	
+	public void remove(String name){		
+		for (int counter = 0; counter < books.size(); counter++){
+			if (books.get(counter).getName() == name) books.remove(counter);
+		}	
+		System.out.println("book " + name + " was removed");
+
+	}
+	
+	public void allBooks(){
+		for (int counter = 0; counter < books.size(); counter++){
+			System.out.println(books.get(counter).toString());
+		}
+	}
+		
+	public static void main(String[] args){
+				
+	}
+
+}
